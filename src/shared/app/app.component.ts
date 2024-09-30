@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NameFigureComponent } from '../../features/name-figure.component';
+import { RotatingImageComponent } from '../../features/rotating-image.component';
 import { developerTexts, mainTexts } from '../../data-access/data';
 import { ItsYourTimeComponent } from '../../features/its-your-time.component';
 import { ProjectsListComponent } from '../../features/projects/projects-list.component';
@@ -13,7 +13,7 @@ import { HrefLinkComponent } from '../ui/href-link.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    NameFigureComponent,
+    RotatingImageComponent,
     ItsYourTimeComponent,
     ProjectsListComponent,
     NgClass,
@@ -49,7 +49,7 @@ import { HrefLinkComponent } from '../ui/href-link.component';
     <main
       class="w-full h-[5000px] font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
-      <port-name-figure></port-name-figure>
+      <port-rotating-image></port-rotating-image>
 
       <div class="flex flex-row justify-between mb-10 lg:mb-24">
         <p class="text-xs w-[70%]">

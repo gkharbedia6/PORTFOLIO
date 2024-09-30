@@ -1,3 +1,60 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'port-rotating-image',
+  standalone: true,
+  template: `
+    <figure>
+      <div class="circle-container">
+        <div class="circle">
+          <div class="w-[150px]">
+            <img src="/assets/images/DVD.png" />
+          </div>
+        </div>
+      </div>
+    </figure>
+  `,
+  styles: [
+    `
+      .circle-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        animation: rotate 20s linear infinite; /* Continuous rotation */
+      }
+
+      .circle {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .letter {
+        position: absolute;
+        font-size: 20px; /* Adjust font size */
+        transform: rotate(calc(var(--i) * 11.25deg)) translate(90px)
+          rotate(calc(var(--i) * -11.25deg));
+        /* Calculate the rotation and position for each letter */
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    `,
+  ],
+})
+export class RotatingImageComponent {
+  constructor() {}
+}
+
 // import { Component } from '@angular/core';
 
 // @Component({
@@ -126,60 +183,3 @@
 // export class NameFigureComponent {
 //   constructor() {}
 // }
-
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'port-name-figure',
-  standalone: true,
-  template: `
-    <figure>
-      <div class="circle-container">
-        <div class="circle">
-          <div class="w-[150px]">
-            <img src="/assets/images/DVD.png" />
-          </div>
-        </div>
-      </div>
-    </figure>
-  `,
-  styles: [
-    `
-      .circle-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%);
-        animation: rotate 20s linear infinite; /* Continuous rotation */
-      }
-
-      .circle {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .letter {
-        position: absolute;
-        font-size: 20px; /* Adjust font size */
-        transform: rotate(calc(var(--i) * 11.25deg)) translate(90px)
-          rotate(calc(var(--i) * -11.25deg));
-        /* Calculate the rotation and position for each letter */
-      }
-
-      @keyframes rotate {
-        0% {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-      }
-    `,
-  ],
-})
-export class NameFigureComponent {
-  constructor() {}
-}
