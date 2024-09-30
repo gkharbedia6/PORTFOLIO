@@ -117,10 +117,10 @@ import { HrefLinkComponent } from '../ui/href-link.component';
         >
           <div class="flex flex-col relative items-center justify-start">
             <div
-              class="w-[200px] lg:w-[300px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              class="w-[200px] lg:w-[250px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
               <img
-                src="/assets/images/name.png"
+                src="/assets/images/name1.png"
                 alt="Name Rotating Image"
                 class="rotating-image"
               />
