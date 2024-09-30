@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: url("/assets/cursors/blueCursor.png"), default;
+  scrollbar-width: none;
+}
+
 @font-face {
   font-family: "Monaco";
   src: url("../public/assets/fonts/Monaco.ttf") format("truetype");
