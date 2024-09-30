@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 import { HrefLinkComponent } from '../../shared/ui/href-link.component';
 import { projects } from '../../data-access/data';
 import { Project } from '../../interfaces/project.interface';
@@ -10,12 +10,12 @@ import { ProjectItemComponent } from './ui/project-item.component';
   imports: [HrefLinkComponent, ProjectItemComponent],
   template: ` <ul>
     @for (project of projectList; track project.name) {
-    <port-project-item [project]="project" />
+    <port-project-item [project]="project" [isExpanded]="areAllExpanded" />
     }
   </ul>`,
 })
 export class ProjectsListComponent {
-  projectList: Project[] = projects;
+  @Input() areAllExpanded = false;
 
-  constructor() {}
+  projectList: Project[] = projects;
 }

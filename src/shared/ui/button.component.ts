@@ -8,14 +8,6 @@ import { Component } from '@angular/core';
     `
       :host {
         cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
-        text-decoration: underline;
-        background: none;
-        border: none;
-        padding: 0;
-        color: inherit;
-      }
-      :host:hover {
-        text-decoration: none;
       }
     `,
   ],

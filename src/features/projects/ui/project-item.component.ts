@@ -16,19 +16,20 @@ import { ButtonComponent } from '../../../shared/ui/button.component';
     }}</a>
 
     <p
-      class="description overflow-hidden whitespace-nowrap text-[12px] max-w-full elipsis-text transition-all duration-200"
+      class="description overflow-hidden whitespace-nowrap text-[12px] max-w-full text-ellipsis transition-all duration-200"
       [class.expanded]="isExpanded"
     >
       {{ project.description }}
     </p>
-
-    <button
-      class="text-[10px] read-more"
-      port-button
-      (click)="toggleDescription()"
-    >
-      {{ isExpanded ? 'Read less' : 'Read more' }}
-    </button>
+    <div class="flex justify-center">
+      <button
+        class="text-[10px] w-fit underline bg-none border-none p-0 text-inherit hover:no-underline	"
+        port-button
+        (click)="toggleDescription()"
+      >
+        {{ isExpanded ? 'Read less' : 'Read more' }}
+      </button>
+    </div>
   </div> `,
   styles: [
     `
@@ -47,8 +48,7 @@ export class ProjectItemComponent {
     url: '',
     description: '',
   };
-
-  isExpanded = false;
+  @Input() isExpanded = false;
 
   toggleDescription() {
     this.isExpanded = !this.isExpanded;

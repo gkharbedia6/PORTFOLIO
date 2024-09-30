@@ -4,6 +4,9 @@ import { NameFigureComponent } from '../../features/name-figure.component';
 import { developerTexts, mainTexts } from '../../data-access/data';
 import { ItsYourTimeComponent } from '../../features/its-your-time.component';
 import { ProjectsListComponent } from '../../features/projects/projects-list.component';
+import { NgClass } from '@angular/common';
+import { ButtonComponent } from '../ui/button.component';
+import { HrefLinkComponent } from '../ui/href-link.component';
 
 @Component({
   selector: 'app-root',
@@ -13,22 +16,76 @@ import { ProjectsListComponent } from '../../features/projects/projects-list.com
     NameFigureComponent,
     ItsYourTimeComponent,
     ProjectsListComponent,
+    NgClass,
+    ButtonComponent,
+    HrefLinkComponent,
   ],
+
   template: `
     <main
       class="w-full h-[5000px] font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex"
     >
-      <div class="flex flex-row justify-between mb-2 lg:mb-0">
+      <div class="flex flex-row justify-between mb-10 lg:mb-24">
         <p class="text-xs w-[70%]">
           {{ main }}
         </p>
         <port-its-your-time></port-its-your-time>
       </div>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <div class="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between">
+        <h1 class="text-3xl font-bold underline">Hello world!</h1>
+        <div class="flex flex-col gap-2">
+          <!-- <a port-href-link href="https://soundcloud.com/pxpstar">
+            <div
+              class="flex flex-row items-baseline justify-start lg:justify-end gap-0"
+            >
+              <div class="w-[40px] flex items-center justify-center flex-row">
+                <img
+                  style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+                  src="/assets/icons/soundCloud.svg"
+                />
+              </div>
+              <p
+                class="text-[13px]"
+                style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+              >
+                soundcloud
+              </p>
+            </div>
+          </a> -->
+          <a port-href-link href="https://linktr.ee/pxpstar">
+            <div
+              class="flex flex-row items-baseline justify-start lg:justify-end gap-0"
+            >
+              <div class="w-[25px] flex items-center justify-center flex-row">
+                <!-- <img
+                  style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+                  src="/assets/icons/linktree.png"
+                /> -->
+              </div>
+              <p
+                class="text-[13px] bg-rich_gold px-2 py-1"
+                style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+              >
+                links
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
       <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
         <div class="lg:w-[30%]">
           <img src="assets/images/profile1.png" />
+
+          <iframe
+            width="100%"
+            height="350"
+            scrolling="no"
+            frameborder="no"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pxpstar&amp;color=0000FF"
+          >
+          </iframe>
         </div>
+
         <section
           class="lg:w-[70%] flex flex-col items-center justify-start gap-2 lg:px-20"
         >
@@ -49,8 +106,21 @@ import { ProjectsListComponent } from '../../features/projects/projects-list.com
           <div
             class="mt-2 lg:mt-14 flex w-full flex-col justify-start gap-10 mb-3 items-start"
           >
-            <h3 class="text-lg font-bold underline">PROJECTS</h3>
-            <port-projects-list></port-projects-list>
+            <div class="flex justify-between w-full">
+              <h3 class="text-lg font-bold underline">Projects</h3>
+
+              <button
+                port-button
+                class="bg-black py-1 px-2 rounded-full text-white text-[8px] lg:text-[10px]"
+                [ngClass]="{ 'bg-rich_gold text-black': areAllExpanded }"
+                (click)="toggleAllDescriptions()"
+              >
+                {{ areAllExpanded ? 'collapse all' : 'expand all' }}
+              </button>
+            </div>
+            <port-projects-list
+              [areAllExpanded]="areAllExpanded"
+            ></port-projects-list>
           </div>
         </section>
       </div>
@@ -75,4 +145,9 @@ import { ProjectsListComponent } from '../../features/projects/projects-list.com
 export class AppComponent {
   main = mainTexts;
   developer = developerTexts;
+  areAllExpanded: boolean = false;
+
+  toggleAllDescriptions() {
+    this.areAllExpanded = !this.areAllExpanded;
+  }
 }
