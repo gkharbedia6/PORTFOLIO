@@ -51,15 +51,33 @@ import { HrefLinkComponent } from '../ui/href-link.component';
     >
       <port-rotating-image></port-rotating-image>
 
-      <div class="flex flex-row justify-between mb-10 lg:mb-24">
+      <div class="flex flex-row justify-between mb-10 lg:mb-40">
         <p class="text-xs w-[70%]">
           {{ main }}
         </p>
         <port-its-your-time></port-its-your-time>
       </div>
-      <div class="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between">
+      <div
+        class="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between mb-12 lg:mb-12"
+      >
         <h1 class="text-3xl font-bold underline">Hello world!</h1>
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 relative">
+          <a port-href-link href="https://blankdiplomat.com">
+            <div
+              class="flex absolute lg:-top-10 top-2 right-0  lg:right-0 flex-row items-baseline justify-start lg:justify-end gap-0"
+            >
+              <div
+                class="w-[25px] flex items-center justify-center flex-row"
+              ></div>
+              <p
+                class="text-[13px] bg-black rounded-full text-white px-2 py-1"
+                style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+              >
+                blankdiplomat.com
+              </p>
+            </div>
+          </a>
+
           <!-- <a port-href-link href="https://soundcloud.com/pxpstar">
             <div
               class="flex flex-row items-baseline justify-start lg:justify-end gap-0"
@@ -99,7 +117,7 @@ import { HrefLinkComponent } from '../ui/href-link.component';
         </div>
       </div>
       <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
-        <div class="lg:w-[30%]">
+        <div class="lg:w-[30%] mb-14 lg:mb-0">
           <img src="assets/images/profile1.png" />
 
           <iframe
@@ -115,7 +133,9 @@ import { HrefLinkComponent } from '../ui/href-link.component';
         <section
           class="lg:w-[70%] flex flex-col items-center justify-start gap-2 lg:px-20"
         >
-          <div class="flex flex-col relative items-center justify-start">
+          <div
+            class="flex flex-col relative items-center justify-start mb-12 mb-6"
+          >
             <div
               class="w-[200px] lg:w-[250px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
