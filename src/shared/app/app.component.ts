@@ -20,11 +20,37 @@ import { HrefLinkComponent } from '../ui/href-link.component';
     ButtonComponent,
     HrefLinkComponent,
   ],
+  styles: [
+    `
+      .rotating-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Center vertically */
+      }
+
+      .rotating-image {
+        height: auto; /* Maintain aspect ratio */
+        animation: rotate 10s linear infinite; /* Continuous rotation */
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    `,
+  ],
 
   template: `
     <main
-      class="w-full h-[5000px] font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex"
+      class="w-full h-[5000px] font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
+      <port-name-figure></port-name-figure>
+
       <div class="flex flex-row justify-between mb-10 lg:mb-24">
         <p class="text-xs w-[70%]">
           {{ main }}
@@ -89,14 +115,22 @@ import { HrefLinkComponent } from '../ui/href-link.component';
         <section
           class="lg:w-[70%] flex flex-col items-center justify-start gap-2 lg:px-20"
         >
-          <div class="flex flex-col items-center justify-start">
-            <port-name-figure></port-name-figure>
+          <div class="flex flex-col relative items-center justify-start">
+            <div
+              class="w-[200px] lg:w-[300px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            >
+              <img
+                src="/assets/images/name.png"
+                alt="Name Rotating Image"
+                class="rotating-image"
+              />
+            </div>
             <div
               class="bg-light_gray mt-7  border-black p-[10px]  border-[1px]"
             >
               @for (text of developer; track text) {
               <p
-                class="text-[10px] m-0 lg:text-[13px] text-center lg:text-start"
+                class="text-[7px] m-0 lg:text-[13px] text-center lg:text-start"
               >
                 {{ text }}
               </p>
@@ -126,7 +160,7 @@ import { HrefLinkComponent } from '../ui/href-link.component';
       </div>
     </main>
     <footer
-      class="h-screen bg-light_gray flex flex-col items-center justify-center"
+      class="h-screen bg-light_gray flex flex-col items-center justify-center md:hidden lg:flex"
     >
       <h2 class=" font-bold text-[75px] lg:text-[150px] font-pacifico">
         ''FIN''
