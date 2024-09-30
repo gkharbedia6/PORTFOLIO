@@ -9,14 +9,21 @@
 
 @font-face {
   font-family: "Monaco";
-  src: url("../public/assets/fonts/Monaco.ttf") format("truetype");
+  src: url("/assets/fonts/Monaco.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "HelveticaNeueBold";
-  src: url("../public/assets/fonts/HelveticaNeueBold.ttf") format("truetype");
+  src: url("/assets/fonts/HelveticaNeueBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("/assets/fonts/Pacifico-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

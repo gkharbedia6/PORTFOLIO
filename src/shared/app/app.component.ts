@@ -55,10 +55,17 @@ import { ProjectsListComponent } from '../../features/projects/projects-list.com
         </section>
       </div>
     </main>
+    <footer
+      class="h-screen bg-light_gray flex flex-col items-center justify-center"
+    >
+      <h2 class=" font-bold text-[75px] lg:text-[150px] font-pacifico">
+        ''FIN''
+      </h2>
+    </footer>
 
     <!-- MOBILE VIEW -->
     <main
-      class="bg-cursor_blue h-screen w-screen text-white  font-monaco flex-col hidden md:flex items-center justify-center"
+      class="bg-cursor_blue h-screen w-screen text-white  font-monaco flex-col hidden md:flex lg:hidden items-center justify-center"
     >
       <h2 class="text-[60px] font-bold underline">Hello world!</h2>
       <p>This part has no view, please view on desktop or mobile!</p>

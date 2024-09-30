@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         monaco: ["Monaco", "monospace"],
         helveticaNeueBold: ["HelveticaNeueBold", "sans-serif"],
+        pacifico: ["Pacifico", "cursive"],
       },
       screens: {
         lg: "1000px",
