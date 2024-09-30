@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ItsYourTimeService } from '../utils/its-your-time.service';
+import { ItsYourTimeService } from '../shared/utils/its-your-time.service';
 
 @Component({
   selector: 'port-its-your-time',

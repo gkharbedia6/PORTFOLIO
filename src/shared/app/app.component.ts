@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NameFigureComponent } from '../../features/name-figure.component';
-import { developerTexts, mainTexts } from '../../data-access/texts';
+import { developerTexts, mainTexts } from '../../data-access/data';
 import { ItsYourTimeComponent } from '../../features/its-your-time.component';
 import { ProjectsListComponent } from '../../features/projects/projects-list.component';
 
@@ -46,8 +46,10 @@ import { ProjectsListComponent } from '../../features/projects/projects-list.com
               }
             </div>
           </div>
-          <div class="mt-2 lg:mt-14 flex w-full justify-start">
-            <h3 class="text-xl font-bold underline">PROJECTS</h3>
+          <div
+            class="mt-2 lg:mt-14 flex w-full flex-col justify-start gap-10 mb-3 items-start"
+          >
+            <h3 class="text-lg font-bold underline">PROJECTS</h3>
             <port-projects-list></port-projects-list>
           </div>
         </section>

@@ -5,15 +5,60 @@ import { Component } from '@angular/core';
   standalone: true,
   template: ` <figure>
     <a href="/">
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
-      <h1 class="main-title">Giorgi Kharbedia</h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
+      <h1
+        style="cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
+        class="main-title"
+      >
+        Giorgi Kharbedia
+      </h1>
     </a>
   </figure>`,
   styles: [

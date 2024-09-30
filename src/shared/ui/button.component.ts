@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'a[port-href-link]',
+  selector: 'button[port-button]',
   standalone: true,
   template: `<ng-content></ng-content>`, // Allows inner content to be projected
   styles: [
@@ -9,6 +9,10 @@ import { Component } from '@angular/core';
       :host {
         cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
         text-decoration: underline;
+        background: none;
+        border: none;
+        padding: 0;
+        color: inherit;
       }
       :host:hover {
         text-decoration: none;
@@ -16,4 +20,4 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class HrefLinkComponent {}
+export class ButtonComponent {}
