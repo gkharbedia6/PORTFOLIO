@@ -11,7 +11,7 @@ export const mainTexts: string =
 
 export const projects: Project[] = [
   {
-    name: 'Win95',
+    name: 'Win95 (In Progress)',
     url: 'https://win95-five.vercel.app/',
     description:
       'Win95 is a web application that allows you to experience the classic Windows 95 interface. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',

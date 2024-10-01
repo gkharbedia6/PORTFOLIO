@@ -11,16 +11,20 @@ import { ButtonComponent } from '../../../shared/ui/button.component';
   >
     <h3 class="text-md font-bold underline">{{ project.name }}</h3>
 
-    <a port-href-link class="text-[13px]" [href]="project.url">{{
+    <a port-href-link class="text-[13px] w-fit" [href]="project.url">{{
       project.url
     }}</a>
 
-    <p
+    <div
       class="description overflow-hidden whitespace-nowrap text-[12px] max-w-full text-ellipsis transition-all duration-200"
       [class.expanded]="isExpanded"
     >
-      {{ project.description }}
-    </p>
+      <p>{{ project.description }}</p>
+      <div class="flex flex-row items-center justify-between">
+        <div>dfdfd</div>
+        <div>dfdfd</div>
+      </div>
+    </div>
     <div class="flex justify-center">
       <button
         class="text-[10px] w-fit underline bg-none border-none p-0 text-inherit hover:no-underline	"

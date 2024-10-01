@@ -4,7 +4,7 @@ import { RotatingImageComponent } from '../../features/rotating-image.component'
 import { developerTexts, mainTexts } from '../../data-access/data';
 import { ItsYourTimeComponent } from '../../features/its-your-time.component';
 import { ProjectsListComponent } from '../../features/projects/projects-list.component';
-import { NgClass } from '@angular/common';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 import { ButtonComponent } from '../ui/button.component';
 import { HrefLinkComponent } from '../ui/href-link.component';
 
@@ -19,6 +19,7 @@ import { HrefLinkComponent } from '../ui/href-link.component';
     NgClass,
     ButtonComponent,
     HrefLinkComponent,
+    NgOptimizedImage,
   ],
   styles: [
     `
@@ -26,12 +27,12 @@ import { HrefLinkComponent } from '../ui/href-link.component';
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Center vertically */
+        height: 100vh;
       }
 
       .rotating-image {
-        height: auto; /* Maintain aspect ratio */
-        animation: rotate 10s linear infinite; /* Continuous rotation */
+        height: auto;
+        animation: rotate 10s linear infinite;
       }
 
       @keyframes rotate {
@@ -47,9 +48,11 @@ import { HrefLinkComponent } from '../ui/href-link.component';
 
   template: `
     <main
-      class="w-full h-[5000px] font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
+      class="h-[5000px] w-screen font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
-      <port-rotating-image></port-rotating-image>
+      <div class="fixed z-[-1] top-0 left-0 w-screen h-screen">
+        <port-rotating-image></port-rotating-image>
+      </div>
 
       <div class="flex flex-row justify-between mb-10 lg:mb-40">
         <p class="text-xs w-[70%]">
@@ -134,21 +137,23 @@ import { HrefLinkComponent } from '../ui/href-link.component';
           class="lg:w-[70%] flex flex-col items-center justify-start gap-2 lg:px-20"
         >
           <div
-            class="flex flex-col relative items-center justify-start mb-12 mb-6"
+            class="flex flex-col z-[-1] relative items-center justify-start mb-12 "
           >
             <div
-              class="w-[200px] lg:w-[250px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              class="w-[200px]  lg:w-[250px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
-              <img
-                src="/assets/images/name1.png"
-                alt="Name Rotating Image"
-                class="rotating-image"
-              />
+              <a href="/">
+                <img
+                  src="/assets/images/name1.png"
+                  alt="Name Rotating Image"
+                  class="rotating-image"
+                />
+              </a>
             </div>
             <div
               class="bg-light_gray mt-7  border-black p-[10px]  border-[1px]"
             >
-              @for (text of developer; track text) {
+              @for (text of developer; let idx = $index; track idx) {
               <p
                 class="text-[7px] m-0 lg:text-[13px] text-center lg:text-start"
               >
