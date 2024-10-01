@@ -41,8 +41,8 @@ export class RotatingImageComponent implements AfterViewInit {
   @ViewChild('container') container!: ElementRef<HTMLDivElement>;
   @ViewChild('dvdImage') dvdImage!: ElementRef<HTMLImageElement>;
 
-  private dx = 5; // Change in x (speed in x direction)
-  private dy = 5; // Change in y (speed in y direction)
+  private dx = 2; // Change in x (speed in x direction)
+  private dy = 2; // Change in y (speed in y direction)
   private positionX = 0;
   private positionY = 0;
 
