@@ -78,7 +78,7 @@ import { SectionTwoComponent } from '../../features/section-two.component';
         </div>
       </div>
       <div
-        class="absolute top-1/4 z-[-10] left-1/2 transform -translate-x-1/2 lg:-translate-y-1/2 lg:w-[660px] w-[450px] "
+        class="absolute top-1/4 z-[-10] left-1/2 transform -translate-x-1/2 -translate-y-1/4 lg:-translate-y-1/2 lg:w-[660px] w-[450px] "
       >
         <img src="/assets/images/gkLogo.gif" />
       </div>
@@ -87,7 +87,7 @@ import { SectionTwoComponent } from '../../features/section-two.component';
         <port-rotating-image></port-rotating-image>
       </div>
 
-      <div class="flex flex-row justify-between mb-10 lg:mb-40">
+      <div class="flex flex-row justify-between mb-24 lg:mb-40">
         <div class="flex flex-col gap-2 w-[70%]">
           <p class="text-xs ">
             {{ quote.quote }}
