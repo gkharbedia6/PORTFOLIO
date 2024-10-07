@@ -7,6 +7,7 @@ import { ProjectsListComponent } from '../../features/projects/projects-list.com
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { ButtonComponent } from '../ui/button.component';
 import { HrefLinkComponent } from '../ui/href-link.component';
+import { SectionOneComponent } from '../../features/section-one.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { HrefLinkComponent } from '../ui/href-link.component';
     ButtonComponent,
     HrefLinkComponent,
     NgOptimizedImage,
+    SectionOneComponent,
   ],
   styles: [
     `
@@ -47,9 +49,33 @@ import { HrefLinkComponent } from '../ui/href-link.component';
   ],
 
   template: `
+    <div class="w-screen h-fit flex items-center justify-between">
+      index.html
+
+      <div class="flex flex-row gap-1 items-baseline">
+        <p class="text-[9px]  text-black">send me mail</p>
+
+        <a
+          port-href-link
+          href="mailto:giorgikharbedia6@gmail.com"
+          class="text-rich_silver font-bold text-[13px] "
+        >
+          giorgikharbedia6&#64;gmail.com
+        </a>
+      </div>
+    </div>
+
     <main
       class="h-[5000px] w-screen font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
+      <div
+        class="absolute top-1/4 left-1/2 transform -translate-x-1/4 lg:-translate-y-1/2 lg:w-[660px] w-[330px] "
+      >
+        <a href="/">
+          <img src="/assets/images/gkLogo.gif" />
+        </a>
+      </div>
+
       <div class="fixed z-[-1] top-0 left-0 w-screen h-screen">
         <port-rotating-image></port-rotating-image>
       </div>
@@ -63,8 +89,8 @@ import { HrefLinkComponent } from '../ui/href-link.component';
       <div
         class="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between mb-12 lg:mb-12"
       >
-        <h1 class="text-3xl font-bold underline">Hello world!</h1>
-        <div class="flex flex-col gap-2 relative">
+        <h1 class="text-3xl font-bold underline">Hello world!.xyz</h1>
+        <div class="flex flex-col gap-2 relative z-20">
           <a port-href-link href="https://blankdiplomat.com">
             <div
               class="flex absolute lg:-top-10 top-2 right-0  lg:right-0 flex-row items-baseline justify-start lg:justify-end gap-0"
@@ -81,36 +107,15 @@ import { HrefLinkComponent } from '../ui/href-link.component';
             </div>
           </a>
 
-          <!-- <a port-href-link href="https://soundcloud.com/pxpstar">
-            <div
-              class="flex flex-row items-baseline justify-start lg:justify-end gap-0"
-            >
-              <div class="w-[40px] flex items-center justify-center flex-row">
-                <img
-                  style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
-                  src="/assets/icons/soundCloud.svg"
-                />
-              </div>
-              <p
-                class="text-[13px]"
-                style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
-              >
-                soundcloud
-              </p>
-            </div>
-          </a> -->
           <a port-href-link href="https://linktr.ee/pxpstar">
             <div
               class="flex flex-row items-baseline justify-start lg:justify-end gap-0"
             >
-              <div class="w-[25px] flex items-center justify-center flex-row">
-                <!-- <img
-                  style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
-                  src="/assets/icons/linktree.png"
-                /> -->
-              </div>
+              <div
+                class="w-[25px] flex items-center justify-center flex-row"
+              ></div>
               <p
-                class="text-[13px] bg-rich_gold px-2 py-1"
+                class="text-[13px] bg-rich_silver px-2 py-1"
                 style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
               >
                 links
@@ -119,70 +124,10 @@ import { HrefLinkComponent } from '../ui/href-link.component';
           </a>
         </div>
       </div>
-      <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
-        <div class="lg:w-[30%] mb-14 lg:mb-0">
-          <img src="assets/images/profile1.png" />
-
-          <iframe
-            width="100%"
-            height="350"
-            scrolling="no"
-            frameborder="no"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pxpstar&amp;color=0000FF"
-          >
-          </iframe>
-        </div>
-
-        <section
-          class="lg:w-[70%] flex flex-col items-center justify-start gap-2 lg:px-20"
-        >
-          <div
-            class="flex flex-col z-[-1] relative items-center justify-start mb-12 "
-          >
-            <div
-              class="w-[200px]  lg:w-[250px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            >
-              <a href="/">
-                <img
-                  src="/assets/images/name1.png"
-                  alt="Name Rotating Image"
-                  class="rotating-image"
-                />
-              </a>
-            </div>
-            <div
-              class="bg-light_gray mt-7  border-black p-[10px]  border-[1px]"
-            >
-              @for (text of developer; let idx = $index; track idx) {
-              <p
-                class="text-[7px] m-0 lg:text-[13px] text-center lg:text-start"
-              >
-                {{ text }}
-              </p>
-              }
-            </div>
-          </div>
-          <div
-            class="mt-2 lg:mt-14 flex w-full flex-col justify-start gap-10 mb-3 items-start"
-          >
-            <div class="flex justify-between w-full">
-              <h3 class="text-lg font-bold underline">Projects</h3>
-
-              <button
-                port-button
-                class="bg-black py-1 px-2 rounded-full text-white text-[8px] lg:text-[10px]"
-                [ngClass]="{ 'bg-rich_gold text-black': areAllExpanded }"
-                (click)="toggleAllDescriptions()"
-              >
-                {{ areAllExpanded ? 'collapse all' : 'expand all' }}
-              </button>
-            </div>
-            <port-projects-list
-              [areAllExpanded]="areAllExpanded"
-            ></port-projects-list>
-          </div>
-        </section>
-      </div>
+      <port-section-one
+        [areAllExpanded]="areAllExpanded"
+        (areAllExpandedChange)="toggleAllDescriptions()"
+      ></port-section-one>
     </main>
     <footer
       class="h-screen bg-light_gray flex flex-col items-center justify-center md:hidden lg:flex"
@@ -196,14 +141,13 @@ import { HrefLinkComponent } from '../ui/href-link.component';
     <main
       class="bg-cursor_blue h-screen w-screen text-white  font-monaco flex-col hidden md:flex lg:hidden items-center justify-center"
     >
-      <h2 class="text-[60px] font-bold underline">Hello world!</h2>
+      <h2 class="text-[60px] font-bold underline">Hello world!.xyz</h2>
       <p>This part has no view, please view on desktop or mobile!</p>
     </main>
   `,
 })
 export class AppComponent {
   main = mainTexts;
-  developer = developerTexts;
   areAllExpanded: boolean = false;
 
   toggleAllDescriptions() {

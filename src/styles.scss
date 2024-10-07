@@ -7,6 +7,14 @@
   scrollbar-width: none;
 }
 
+::selection {
+  background-color: #e12120;
+}
+
+::-moz-selection {
+  background-color: #e12120;
+}
+
 @font-face {
   font-family: "Monaco";
   src: url("/assets/fonts/Monaco.ttf") format("truetype");

@@ -14,13 +14,27 @@ export const projects: Project[] = [
     name: 'Win95 (In Progress)',
     url: 'https://win95-five.vercel.app/',
     description:
-      'Win95 is a web application that allows you to experience the classic Windows 95 interface. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      'Win95 is a web application that allows you to experience the classic Windows 95 interface.',
+    technologies: ['React', 'Vite', 'TypeScript', 'Tailwind'],
+    developerNotes: 'This project is a work in progress.',
   },
   {
     name: 'VVHARTS',
     url: 'https://vvharts.com/',
     description:
-      'VVHARTS is a modern streetwear clothing brand website with full e-commerce functionality. It features a sleek, responsive design showcasing the latest collections, an intuitive shopping cart, secure checkout process, and user account management. The site also includes a blog section for fashion trends and brand updates.',
+      'VVHARTS is a modern streetwear clothing brand website with full e-commerce functionality. It features responsive design showcasing the latest collections, an intuitive shopping cart, secure checkout process, and user account management.',
+    technologies: [
+      'Next',
+      'React',
+      'Supabase',
+      'TypeScript',
+      'Zustand',
+      'Tailwind',
+      'Framer Motion',
+      'React Hook Form',
+      'Nodemailer',
+    ],
+    developerNotes: 'This project is a work in progress.',
   },
   {
     name: 'TATIA BAZADZE',

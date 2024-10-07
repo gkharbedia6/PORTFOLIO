@@ -15,7 +15,7 @@ module.exports = {
       colors: {
         cursor_blue: "#0000FF",
         light_gray: "#c3c3c3",
-        rich_gold: "#ecbe07",
+        rich_silver: "#C0C0C0",
       },
     },
   },
