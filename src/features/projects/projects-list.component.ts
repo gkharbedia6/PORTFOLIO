@@ -1,7 +1,7 @@
 import { Component, Input, output } from '@angular/core';
 import { HrefLinkComponent } from '../../shared/ui/href-link.component';
 import { projects } from '../../data-access/data';
-import { Project } from '../../interfaces/project.interface';
+import { iProject } from '../../interfaces/project.interface';
 import { ProjectItemComponent } from './ui/project-item.component';
 
 @Component({
@@ -17,5 +17,5 @@ import { ProjectItemComponent } from './ui/project-item.component';
 export class ProjectsListComponent {
   @Input() areAllExpanded = false;
 
-  projectList: Project[] = projects;
+  projectList: iProject[] = projects;
 }

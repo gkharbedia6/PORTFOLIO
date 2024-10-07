@@ -1,47 +1,49 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { iProject } from '../../../interfaces/project.interface';
+import { Component, Input } from '@angular/core';
 import { HrefLinkComponent } from '../../../shared/ui/href-link.component';
 import { ButtonComponent } from '../../../shared/ui/button.component';
-import { CommonModule, NgIf } from '@angular/common';
+import { DatePipe, NgIf } from '@angular/common';
+import { iJobExperience } from '../../../interfaces/job-experience.interface';
 
 @Component({
-  selector: 'port-project-item',
+  selector: 'port-job-item',
   standalone: true,
+  imports: [HrefLinkComponent, ButtonComponent, DatePipe],
   template: `
     <div
-      class="flex flex-col gap-2 border-b border-black pb-2 overflow-hidden lg:w-[55vw] w-[95vw] mb-7"
+      class="flex flex-col gap-2 pb-2 overflow-hidden lg:w-[55vw] w-[95vw] mb-7"
     >
-      <h3 class="text-md font-bold underline">{{ project.name }}</h3>
-
-      <a
-        port-href-link
-        class="text-[13px] w-fit"
-        [href]="project.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ project.url }}</a
-      >
-
+      <h3 class="text-md font-bold text-center underline">{{ job.company }}</h3>
       <div
         class="description overflow-hidden text-[12px] max-w-full transition-all duration-200"
         [class.expanded]="isExpanded"
       >
-        @if (!isExpanded) {
-        <p class="truncate">{{ firstSentence }}</p>
-        } @else {
+        <div class="flex flex-col items-center justify-center gap-2">
+          <h4 class="text-sm font-bold flex flex-row gap-2">
+            <p class="text-[13px] text-black">last position:</p>
+            <p>{{ job.lastPosition }}</p>
+          </h4>
+          <h4 class="text-sm font-bold flex flex-row gap-2">
+            <p class="text-[13px] text-black">dates:</p>
+            <p>
+              {{ job.startDate | date : 'MMM yyyy' }} -
+              {{ job.endDate | date : 'MMM yyyy' }}
+            </p>
+          </h4>
+          <p>{{ job.description }}</p>
+        </div>
 
-        <p>{{ project.description }}</p>
+        @if (isExpanded) {
 
-        <div class="flex flex-row items-start justify-between mt-10 mb-5">
+        <div class="flex flex-row items-center justify-between mt-10 mb-5">
           <div class="w-[50%]  flex flex-col gap-2 mt-1">
             <h4>Main technologies used:</h4>
             <ul>
-              @for (technology of project.technologies; track $index) {
+              @for (technology of job.technologies; track $index) {
               <li>{{ technology }}</li>
               }
             </ul>
           </div>
-          <div class="w-[50%] flex flex-col gap-2 justify-start items-end">
+          <div class="w-[50%] flex flex-col gap-2 justify-center items-end">
             <h4 class="flex flex-row  gap-1 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +59,7 @@ import { CommonModule, NgIf } from '@angular/common';
               <span class="mt-1">Developer notes:</span>
             </h4>
             <p class="text-[10px] text-gray-500 text-end">
-              {{ project.developerNotes }}
+              {{ job.developerNotes }}
             </p>
           </div>
         </div>
@@ -75,43 +77,10 @@ import { CommonModule, NgIf } from '@angular/common';
       </div>
     </div>
   `,
-  styles: [
-    `
-      .description {
-        max-height: 3em; /* Adjust based on how much you want to show */
-        transition: max-height 0.2s ease-out;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-
-      .description.expanded {
-        max-height: none; /* Remove the height restriction when expanded */
-        white-space: normal;
-      }
-    `,
-  ],
-  imports: [HrefLinkComponent, ButtonComponent],
 })
-export class ProjectItemComponent implements OnInit {
-  @Input({ required: true }) project: iProject = {
-    name: '',
-    url: '',
-    description: '',
-  };
+export class JobItemComponent {
+  @Input({ required: true }) job!: iJobExperience;
   @Input() isExpanded = false;
-  // isExpanded = true;
-
-  firstSentence = '';
-
-  ngOnInit() {
-    const splitDescription = this.project.description.split('.');
-    if (splitDescription.length > 1) {
-      this.firstSentence = splitDescription[0] + '.';
-    } else {
-      this.firstSentence = this.project.description;
-    }
-  }
 
   toggleDescription() {
     this.isExpanded = !this.isExpanded;

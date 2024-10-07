@@ -1,4 +1,6 @@
-import { Project } from '../interfaces/project.interface';
+import { IChatGPTQuote } from '../interfaces/chatGPTQuote.interface';
+import { iJobExperience } from '../interfaces/job-experience.interface';
+import { iProject } from '../interfaces/project.interface';
 
 export const developerTexts: string[] = [
   'Developer and designer with a passion for creating meaningful and cool stuff.',
@@ -6,10 +8,13 @@ export const developerTexts: string[] = [
   'Developer and designer with a passion for creating meaningful and cool stuff.',
 ];
 
-export const mainTexts: string =
-  ' Giorgi Kharbedia, born in 90s, is a skilled thinker with a passion for creating intuitive and visually appealing web interfaces. With interest in modern technologies, Giorgi combines a technical background with a creative approach to design and create cool stuff. His attention to detail and ability to stay current make him a valuable asset in the ever-evolving nature of this world.';
+export const chatGPTQuote: IChatGPTQuote = {
+  quote:
+    '  "Giorgi Kharbedia, born in 90s, is a skilled thinker with a passion for creating intuitive and visually appealing web interfaces. With interest in modern technologies, Giorgi combines a technical background with a creative approach to design and create cool stuff. His attention to detail and ability to stay current make him a valuable asset in the ever-evolving nature of this world." ',
+  author: '-   ChatGPT, circa 2024',
+};
 
-export const projects: Project[] = [
+export const projects: iProject[] = [
   {
     name: 'Win95 (In Progress)',
     url: 'https://win95-five.vercel.app/',
@@ -59,5 +64,28 @@ export const projects: Project[] = [
     url: 'https://www.enertec.ge/',
     description:
       'Enertec Technologies is a company that provides energy solutions to businesses and organizations. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+  },
+];
+
+export const jobs: iJobExperience[] = [
+  {
+    company: 'Tegeta Motors',
+    lastPosition: 'Middle Angular Developer',
+    startDate: new Date('2022-08-01'),
+    endDate: new Date('2023-11-01'),
+    description:
+      'Enertec Technologies is a company that provides energy solutions to businesses and organizations. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+    technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'JavaScript'],
+    developerNotes: 'This project is a work in progress.',
+  },
+  {
+    company: 'Enertec Technologies',
+    lastPosition: 'Full Stack Developer',
+    startDate: new Date('2023-06-01'),
+    endDate: new Date('2023-08-01'),
+    description:
+      'Enertec Technologies is a company that provides energy solutions to businesses and organizations. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+    technologies: ['Next', 'React', 'HTML', 'CSS', 'TypeScript'],
+    developerNotes: 'This project is a work in progress.',
   },
 ];

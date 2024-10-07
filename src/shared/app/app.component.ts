@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RotatingImageComponent } from '../../features/rotating-image.component';
-import { mainTexts } from '../../data-access/data';
+import { chatGPTQuote } from '../../data-access/data';
 import { ItsYourTimeComponent } from '../../features/its-your-time.component';
 import { ProjectsListComponent } from '../../features/projects/projects-list.component';
 import { NgClass, NgOptimizedImage } from '@angular/common';
@@ -52,24 +52,29 @@ import { SectionTwoComponent } from '../../features/section-two.component';
 
   template: `
     <div class="w-screen h-fit flex items-center justify-between">
-      index.html
-
-      <div class="flex flex-row gap-1 items-baseline">
-        <p class="text-[9px]  text-black">send me mail</p>
-
-        <a
-          port-href-link
-          href="mailto:giorgikharbedia6@gmail.com"
-          class="text-rich_silver font-bold text-[13px] "
-        >
-          giorgikharbedia6&#64;gmail.com
-        </a>
-      </div>
+      <p class="text-[10px]">index.html</p>
     </div>
-
     <main
       class="h-[5000px] w-screen font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
+      <div
+        class="w-screen h-fit flex fixed bottom-0 left-0 items-center justify-between"
+      >
+        <h2 class="text-[10px] font-helveticaNeueBold text-black">
+          © 2024 Giorgi Kharbedia. All rights reserved.
+        </h2>
+        <div class="flex flex-row gap-1 items-baseline">
+          <p class="text-[9px]  text-black">send me mail</p>
+
+          <a
+            port-href-link
+            href="mailto:giorgikharbedia6@gmail.com"
+            class="text-rich_silver font-bold text-[13px] font-helveticaNeueBold "
+          >
+            giorgikharbedia6&#64;gmail.com
+          </a>
+        </div>
+      </div>
       <div
         class="absolute top-1/4 left-1/2 transform -translate-x-1/4 lg:-translate-y-1/2 lg:w-[660px] w-[330px] "
       >
@@ -83,9 +88,12 @@ import { SectionTwoComponent } from '../../features/section-two.component';
       </div>
 
       <div class="flex flex-row justify-between mb-10 lg:mb-40">
-        <p class="text-xs w-[70%]">
-          {{ main }}
-        </p>
+        <div class="flex flex-col gap-2 w-[70%]">
+          <p class="text-xs ">
+            {{ quote.quote }}
+          </p>
+          <p class="text-end text-[10px] font-bold">{{ quote.author }}</p>
+        </div>
         <port-its-your-time></port-its-your-time>
       </div>
       <div
@@ -126,14 +134,11 @@ import { SectionTwoComponent } from '../../features/section-two.component';
           </a>
         </div>
       </div>
-      <port-section-one
-        [areAllExpanded]="areAllExpanded"
-        (areAllExpandedChange)="toggleAllDescriptions()"
-      ></port-section-one>
+      <port-section-one></port-section-one>
       <port-section-two></port-section-two>
     </main>
     <footer
-      class="h-screen bg-light_gray flex flex-col items-center justify-center md:hidden lg:flex"
+      class="h-screen bg-rich_silver flex flex-col items-center justify-center md:hidden lg:flex"
     >
       <h2 class=" font-bold text-[75px] lg:text-[150px] font-pacifico">
         ''FIN''
@@ -150,10 +155,5 @@ import { SectionTwoComponent } from '../../features/section-two.component';
   `,
 })
 export class AppComponent {
-  main = mainTexts;
-  areAllExpanded: boolean = false;
-
-  toggleAllDescriptions() {
-    this.areAllExpanded = !this.areAllExpanded;
-  }
+  quote = chatGPTQuote;
 }

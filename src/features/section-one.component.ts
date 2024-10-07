@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProjectsListComponent } from './projects/projects-list.component';
 import { developerTexts } from '../data-access/data';
 import { NgClass } from '@angular/common';
@@ -34,7 +34,7 @@ import { ButtonComponent } from '../shared/ui/button.component';
           >
             <a href="/"> </a>
           </div>
-          <div class="bg-light_gray mt-7  border-black p-[10px]  border-[1px]">
+          <div class="bg-rich_silver mt-7  border-black p-[10px]  border-[1px]">
             @for (text of developer; let idx = $index; track idx) {
             <p class="text-[7px] m-0 lg:text-[13px] text-center lg:text-start">
               {{ text }}
@@ -66,11 +66,10 @@ import { ButtonComponent } from '../shared/ui/button.component';
   `,
 })
 export class SectionOneComponent {
-  @Input() areAllExpanded: boolean = false;
-  @Output() areAllExpandedChange = new EventEmitter<boolean>();
   developer = developerTexts;
+  areAllExpanded: boolean = false;
 
   toggleAllDescriptions() {
-    this.areAllExpandedChange.emit(this.areAllExpanded);
+    this.areAllExpanded = !this.areAllExpanded;
   }
 }
