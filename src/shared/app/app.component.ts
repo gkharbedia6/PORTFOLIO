@@ -58,9 +58,11 @@ import { SectionTwoComponent } from '../../features/section-two.component';
       class="h-[5000px] w-screen font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
       <div
-        class="w-screen px-2 h-fit flex fixed bottom-0 left-0 items-center justify-between"
+        class="w-screen py-2 px-2 h-fit flex fixed bottom-0 left-0 flex-col lg:flex-row lg:items-center lg:justify-between"
       >
-        <h2 class="text-[10px] font-helveticaNeueBold text-black">
+        <h2
+          class="text-[10px] order-2 lg:order-1 font-helveticaNeueBold text-black"
+        >
           © 2024 Giorgi Kharbedia. All rights reserved.
         </h2>
         <div class="flex flex-row gap-1 items-baseline">
