@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectsListComponent } from './projects/projects-list.component';
 import { developerTexts } from '../data-access/data';
 import { NgClass } from '@angular/common';
+import { ButtonComponent } from '../shared/ui/button.component';
 
 @Component({
   selector: 'port-section-one',
   standalone: true,
-  imports: [ProjectsListComponent, NgClass],
+  imports: [ProjectsListComponent, ButtonComponent, NgClass],
   template: `
     <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
       <div class="lg:w-[30%] mb-14 lg:mb-0">

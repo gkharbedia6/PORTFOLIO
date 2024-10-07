@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RotatingImageComponent } from '../../features/rotating-image.component';
-import { developerTexts, mainTexts } from '../../data-access/data';
+import { mainTexts } from '../../data-access/data';
 import { ItsYourTimeComponent } from '../../features/its-your-time.component';
 import { ProjectsListComponent } from '../../features/projects/projects-list.component';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { ButtonComponent } from '../ui/button.component';
 import { HrefLinkComponent } from '../ui/href-link.component';
 import { SectionOneComponent } from '../../features/section-one.component';
+import { SectionTwoComponent } from '../../features/section-two.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { SectionOneComponent } from '../../features/section-one.component';
     HrefLinkComponent,
     NgOptimizedImage,
     SectionOneComponent,
+    SectionTwoComponent,
   ],
   styles: [
     `
@@ -128,6 +130,7 @@ import { SectionOneComponent } from '../../features/section-one.component';
         [areAllExpanded]="areAllExpanded"
         (areAllExpandedChange)="toggleAllDescriptions()"
       ></port-section-one>
+      <port-section-two></port-section-two>
     </main>
     <footer
       class="h-screen bg-light_gray flex flex-col items-center justify-center md:hidden lg:flex"

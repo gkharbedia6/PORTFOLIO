@@ -13,9 +13,14 @@ import { CommonModule, NgIf } from '@angular/common';
     >
       <h3 class="text-md font-bold underline">{{ project.name }}</h3>
 
-      <a port-href-link class="text-[13px] w-fit" [href]="project.url">{{
-        project.url
-      }}</a>
+      <a
+        port-href-link
+        class="text-[13px] w-fit"
+        [href]="project.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{ project.url }}</a
+      >
 
       <div
         class="description overflow-hidden text-[12px] max-w-full transition-all duration-200"

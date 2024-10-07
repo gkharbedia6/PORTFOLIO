@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
       :host {
         cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
       }
+      :host:hover {
+        cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
+      }
     `,
   ],
 })
