@@ -5,6 +5,15 @@
 * {
   cursor: url("/assets/cursors/blueCursor.png"), default;
   scrollbar-width: none;
+  overflow: -moz-scrollbars-none; /* Older Firefox */
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+-webkit-scrollbar {
+  display: none;
 }
 
 ::selection {
@@ -13,6 +22,13 @@
 
 ::-moz-selection {
   background-color: #e12120;
+}
+
+.old_windows-window-border {
+  border: 2px solid #f4ebeb;
+  border-right: 2px solid #413f3f;
+  border-bottom: 2px solid #413f3f;
+  border-radius: 1px;
 }
 
 @font-face {

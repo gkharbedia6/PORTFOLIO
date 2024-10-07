@@ -1,17 +1,53 @@
 import { Component } from '@angular/core';
 import { ProjectsListComponent } from './projects/projects-list.component';
 import { developerTexts } from '../data-access/data';
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { ButtonComponent } from '../shared/ui/button.component';
 
 @Component({
   selector: 'port-section-one',
   standalone: true,
-  imports: [ProjectsListComponent, ButtonComponent, NgClass],
+  imports: [ProjectsListComponent, ButtonComponent, NgClass, NgStyle],
   template: `
     <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
-      <div class="lg:w-[30%] mb-14 lg:mb-0">
-        <img src="assets/images/profile1.png" />
+      <div
+        class="lg:w-[30%] mb-14 lg:mb-0 flex flex-col items-center justify-start"
+      >
+        <div
+          [ngStyle]="{ display: isClosed ? 'none' : 'block' }"
+          class="flex flex-col w-full justify-start items-center old_windows-window-border"
+        >
+          <div
+            class="w-full h-6 bg-cursor_blue px-1 flex gap-1 justify-start items-center"
+          >
+            <p class="text-white text-[13px] text-start flex-grow">
+              profile pic 1
+            </p>
+            <div
+              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
+            >
+              <span class="text-black text-[10px] mt-[1px] ">
+                <img src="/assets/icons/foldIcon.jpg" />
+              </span>
+            </div>
+            <div
+              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
+            >
+              <span class="text-black text-[10px] mt-[1px] ">
+                <img src="/assets/icons/iconFullscreen.jpg" />
+              </span>
+            </div>
+            <div
+              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
+              (click)="toggleIsClosed()"
+            >
+              <span class="text-black text-[10px] mt-[1px] ">
+                <img src="/assets/icons/iconClose.jpg" />
+              </span>
+            </div>
+          </div>
+          <img src="assets/images/profile1.png" class="w-full object-cover" />
+        </div>
 
         <iframe
           width="100%"
@@ -31,9 +67,7 @@ import { ButtonComponent } from '../shared/ui/button.component';
         >
           <div
             class="w-[200px]  lg:w-[250px] rotating-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          >
-            <a href="/"> </a>
-          </div>
+          ></div>
           <div class="bg-rich_silver mt-7  border-black p-[10px]  border-[1px]">
             @for (text of developer; let idx = $index; track idx) {
             <p class="text-[7px] m-0 lg:text-[13px] text-center lg:text-start">
@@ -68,8 +102,13 @@ import { ButtonComponent } from '../shared/ui/button.component';
 export class SectionOneComponent {
   developer = developerTexts;
   areAllExpanded: boolean = false;
+  isClosed: boolean = false;
 
   toggleAllDescriptions() {
     this.areAllExpanded = !this.areAllExpanded;
+  }
+
+  toggleIsClosed() {
+    this.isClosed = !this.isClosed;
   }
 }

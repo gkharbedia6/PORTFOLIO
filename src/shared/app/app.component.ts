@@ -58,32 +58,30 @@ import { SectionTwoComponent } from '../../features/section-two.component';
       class="h-[5000px] w-screen font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
       <div
-        class="w-screen h-fit flex fixed bottom-0 left-0 items-center justify-between"
+        class="w-screen px-2 h-fit flex fixed bottom-0 left-0 items-center justify-between"
       >
         <h2 class="text-[10px] font-helveticaNeueBold text-black">
           © 2024 Giorgi Kharbedia. All rights reserved.
         </h2>
         <div class="flex flex-row gap-1 items-baseline">
-          <p class="text-[9px]  text-black">send me mail</p>
+          <p class="text-[10px]  text-black">send me an email</p>
 
           <a
             port-href-link
             href="mailto:giorgikharbedia6@gmail.com"
-            class="text-rich_silver font-bold text-[13px] font-helveticaNeueBold "
+            class="font-bold text-[10px] font-helveticaNeueBold "
           >
             giorgikharbedia6&#64;gmail.com
           </a>
         </div>
       </div>
       <div
-        class="absolute top-1/4 left-1/2 transform -translate-x-1/4 lg:-translate-y-1/2 lg:w-[660px] w-[330px] "
+        class="absolute top-1/4 z-[-10] left-1/2 transform -translate-x-1/2 lg:-translate-y-1/2 lg:w-[660px] w-[450px] "
       >
-        <a href="/">
-          <img src="/assets/images/gkLogo.gif" />
-        </a>
+        <img src="/assets/images/gkLogo.gif" />
       </div>
 
-      <div class="fixed z-[-1] top-0 left-0 w-screen h-screen">
+      <div class="fixed z-[-20] top-0 left-0 w-screen h-screen">
         <port-rotating-image></port-rotating-image>
       </div>
 
@@ -135,12 +133,13 @@ import { SectionTwoComponent } from '../../features/section-two.component';
         </div>
       </div>
       <port-section-one></port-section-one>
-      <port-section-two></port-section-two>
     </main>
     <footer
       class="h-screen bg-rich_silver flex flex-col items-center justify-center md:hidden lg:flex"
     >
-      <h2 class=" font-bold text-[75px] lg:text-[150px] font-pacifico">
+      <h2
+        class=" font-bold text-white text-[75px] lg:text-[150px] font-helveticaNeueBold"
+      >
         ''FIN''
       </h2>
     </footer>
