@@ -2,6 +2,26 @@ import { IChatGPTQuote } from '../interfaces/chatGPTQuote.interface';
 import { iJobExperience } from '../interfaces/job-experience.interface';
 import { iProject } from '../interfaces/project.interface';
 
+export const poem: string = `
+I arn lovely, O mortals, like a dream of stone,
+And my bosom, where each one gets bruised in turn,
+To inspire the love of a poet is prone,
+Like matter eternally silent and stern.
+
+As an unfathomed sphinx, enthroned by the Nile,
+My heart a swan's whiteness with granite combines,
+And I hate every movement, displacing the lines,
+And never I weep and never I smile.
+
+The poets in front of mine attitudes fine
+(Which the proudest of monuments seem to implant),
+To studies profound all their moments assign,
+
+For I have all these docile swains to enchant —
+Two mirrors, which Beauty in all things ignite:
+Mine eyes, my large eyes, of eternal Light!
+`;
+
 export const developerTexts: string[] = [
   'Developer and designer with a passion for creating meaningful and cool stuff.',
   'Developer and designer with a passion for creating meaningful and cool stuff.',
@@ -20,7 +40,7 @@ export const projects: iProject[] = [
     url: 'https://win95-five.vercel.app/',
     description:
       'Win95 is a web application that allows you to experience the classic Windows 95 interface.',
-    technologies: ['React', 'Vite', 'TypeScript', 'Tailwind'],
+    technologies: ['React', 'Vite', 'TypeScript', 'HTML', 'CSS', 'Tailwind'],
     developerNotes: 'This project is a work in progress.',
   },
   {
@@ -31,6 +51,8 @@ export const projects: iProject[] = [
     technologies: [
       'Next',
       'React',
+      'HTML',
+      'CSS',
       'Supabase',
       'TypeScript',
       'Zustand',
@@ -39,31 +61,54 @@ export const projects: iProject[] = [
       'React Hook Form',
       'Nodemailer',
     ],
-    developerNotes: 'This project is a work in progress.',
+    developerNotes:
+      'First time using Supabase. Fully functional e-commerce responsive website with admin panel. Use mail: testadmin@gmail.com and password: testadmin123! to access the website full functionality with admin rights, or create your own regular customer account with register or google auth.',
   },
   {
     name: 'TATIA BAZADZE',
     url: 'https://tatiabazadze.com/images',
     description:
       "A minimalist portfolio website showcasing the vibrant works of painter Tatia Bazadze. The gallery-style layout emphasizes the artwork, allowing visitors to immerse themselves in the artist's colorful and expressive paintings. The site features a clean, intuitive design that lets the art speak for itself.",
+    technologies: ['Angular', 'HTML', 'CSS', 'TypeScript'],
+    developerNotes: 'A static portfolio website.',
   },
   {
     name: 'BLANK DIPLOMAT',
     url: 'https://blankdiplomat.com/',
     description:
       "BLANK DIPLOMAT is a personal clothing brand website built on the Shopify platform. It showcases a unique collection of streetwear and accessories with a minimalist aesthetic. The site features custom-designed themes using Liquid templating language, along with bespoke HTML and CSS to create a distinctive user experience. The e-commerce functionality is seamlessly integrated, offering smooth navigation, product filtering, and a secure checkout process. The design emphasizes clean lines and a monochromatic color scheme, reflecting the brand's ethos of simplicity and quality.",
+    technologies: ['Shopify', 'Liquid', 'HTML', 'CSS', 'JavaScript'],
+    developerNotes:
+      'Not just a template website, its a custom design. Had to learn liquid template language and the structure of Shopify websites to change the look and functionality the way intended for the brand.',
   },
   {
     name: 'Peculiar Weather',
     url: 'https://weather-virid-pi.vercel.app/',
     description:
       'A unique weather application that challenges conventional city searches. Users can input any city name, and if it exists, the app provides detailed weather information including temperature, humidity, and geographical data. This peculiar approach makes discovering weather conditions in lesser-known locations an intriguing experience.',
+    technologies: ['Angular', 'TypeScript', 'Tailwind', 'RXJS', 'HTML', 'CSS'],
+    developerNotes:
+      'Allow your location. Otherwise it is a playground to spam strange name and find out cities.',
   },
   {
     name: 'Enertec Technologies',
     url: 'https://www.enertec.ge/',
     description:
-      'Enertec Technologies is a company that provides energy solutions to businesses and organizations. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      'Enertec Technologies is a company that provides energy solutions to businesses and organizations. This is a business website with a blog section and a contact form with ability to change language.',
+    technologies: [
+      'Next',
+      'React',
+      'HTML',
+      'CSS',
+      'TypeScript',
+      'Tailwind',
+      'Framer Motion',
+      'React Hook Form',
+      'Nodemailer',
+      'i18next',
+    ],
+    developerNotes:
+      'Freelance project. First time working with Next.js and React.js in a real project.',
   },
 ];
 

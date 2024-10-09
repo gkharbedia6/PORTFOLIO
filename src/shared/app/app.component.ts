@@ -9,6 +9,7 @@ import { ButtonComponent } from '../ui/button.component';
 import { HrefLinkComponent } from '../ui/href-link.component';
 import { SectionOneComponent } from '../../features/section-one.component';
 import { SectionTwoComponent } from '../../features/section-two.component';
+import { TypewriterComponent } from '../../features/typewriter.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { SectionTwoComponent } from '../../features/section-two.component';
     NgOptimizedImage,
     SectionOneComponent,
     SectionTwoComponent,
+    TypewriterComponent,
   ],
   styles: [
     `
@@ -135,6 +137,13 @@ import { SectionTwoComponent } from '../../features/section-two.component';
         </div>
       </div>
       <port-section-one></port-section-one>
+      <div class="flex items-start justify-center lg:px-64 w-full h-full mt-24">
+        <port-typewriter
+          class="text-[24px] "
+          text="to be continued..."
+          [delayBetweenCycles]="1000"
+        ></port-typewriter>
+      </div>
     </main>
     <footer
       class="h-screen bg-rich_silver flex flex-col items-center justify-center md:hidden lg:flex"

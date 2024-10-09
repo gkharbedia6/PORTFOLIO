@@ -1,26 +1,39 @@
 import { Component } from '@angular/core';
 import { ProjectsListComponent } from './projects/projects-list.component';
-import { developerTexts } from '../data-access/data';
+import { developerTexts, poem } from '../data-access/data';
 import { NgClass, NgStyle } from '@angular/common';
 import { ButtonComponent } from '../shared/ui/button.component';
+import { TypewriterComponent } from './typewriter.component';
 
 @Component({
   selector: 'port-section-one',
   standalone: true,
-  imports: [ProjectsListComponent, ButtonComponent, NgClass, NgStyle],
+  imports: [
+    ProjectsListComponent,
+    ButtonComponent,
+    NgClass,
+    NgStyle,
+    TypewriterComponent,
+  ],
   template: `
     <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
       <div
         class="lg:w-[30%] mb-14 lg:mb-0 flex flex-col items-center justify-start"
       >
+        @if (isClosed) {
+        <port-typewriter
+          class="w-full text-[13px] flex items-start py-12  justify-start"
+          [text]="poem"
+          [delayBetweenCycles]="5000"
+        ></port-typewriter>
+        } @else {
         <div
-          [ngStyle]="{ display: isClosed ? 'none' : 'block' }"
-          class="flex flex-col w-full justify-start items-center old_windows-window-border"
+          class="flex  flex-col w-full justify-start items-center min-h-[400px] old_windows-window-border"
         >
           <div
-            class="w-full h-6 bg-cursor_blue px-1 flex gap-1 justify-start items-center"
+            class="w-full h-6 bg-rich_silver px-1 flex gap-1 justify-start items-center"
           >
-            <p class="text-white text-[13px] text-start flex-grow">
+            <p class="text-black text-[13px] text-start flex-grow">
               profile pic 1
             </p>
             <div
@@ -49,12 +62,14 @@ import { ButtonComponent } from '../shared/ui/button.component';
           <img src="assets/images/profile1.png" class="w-full object-cover" />
         </div>
 
+        }
+
         <iframe
           width="100%"
           height="350"
           scrolling="no"
           frameborder="no"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pxpstar&amp;color=E12120"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pxpstar&amp;color=0000FF"
         >
         </iframe>
       </div>
@@ -103,6 +118,7 @@ export class SectionOneComponent {
   developer = developerTexts;
   areAllExpanded: boolean = false;
   isClosed: boolean = false;
+  poem: string = poem;
 
   toggleAllDescriptions() {
     this.areAllExpanded = !this.areAllExpanded;
