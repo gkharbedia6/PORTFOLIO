@@ -137,21 +137,22 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         </div>
       </div>
       <port-section-one></port-section-one>
-      <div class="flex items-start justify-center lg:px-64 w-full h-full mt-24">
+      <div class="flex items-start justify-center lg:px-64 w-full mt-24">
         <port-typewriter
           class="text-[24px] "
           text="to be continued..."
           [delayBetweenCycles]="1000"
         ></port-typewriter>
       </div>
+      <section class="w-full h-screen bg-section-two"></section>
     </main>
     <footer
       class="h-screen bg-rich_silver flex flex-col items-center justify-center md:hidden lg:flex"
     >
       <h2
-        class=" font-bold text-white text-[75px] lg:text-[150px] font-helveticaNeueBold"
+        class=" font-bold text-cursor_blue text-[20px]  font-helveticaNeueBold"
       >
-        ''FIN''
+        FIN
       </h2>
     </footer>
 

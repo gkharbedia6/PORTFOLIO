@@ -24,6 +24,12 @@
   background-color: #e12120;
 }
 
+.bg-section-two {
+  background-color: #020202;
+  background-image: linear-gradient(180deg, #000000e3, #000000e3),
+    url(/assets/images/dedTV.gif);
+}
+
 .old_windows-window-border {
   border: 2px solid #f4ebeb;
   border-right: 2px solid #413f3f;
