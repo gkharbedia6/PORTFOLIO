@@ -57,7 +57,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
       <p class="text-[10px]">index.html</p>
     </div>
     <main
-      class="h-[5000px] w-screen font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
+      class=" w-screen font-monaco p-2 gap-10 lg:gap-2 flex-col md:hidden lg:flex overflow-x-hidden"
     >
       <div
         class="w-screen py-2 px-2 h-fit flex fixed bottom-0 left-0 flex-col lg:flex-row lg:items-center lg:justify-between"
@@ -137,23 +137,15 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         </div>
       </div>
       <port-section-one></port-section-one>
-      <div class="flex items-start justify-center lg:px-64 w-full mt-24">
-        <port-typewriter
-          class="text-[24px] "
-          text="to be continued..."
-          [delayBetweenCycles]="1000"
-        ></port-typewriter>
-      </div>
-      <section class="w-full h-screen bg-section-two"></section>
     </main>
     <footer
-      class="h-screen bg-rich_silver flex flex-col items-center justify-center md:hidden lg:flex"
+      class="h-screen  bg-section-two flex flex-col items-center justify-center md:hidden lg:flex"
     >
-      <h2
-        class=" font-bold text-cursor_blue text-[20px]  font-helveticaNeueBold"
-      >
-        FIN
-      </h2>
+      <port-typewriter
+        class="text-[24px] text-cursor_blue"
+        text="to be continued..."
+        [delayBetweenCycles]="1000"
+      ></port-typewriter>
     </footer>
 
     <!-- MOBILE VIEW -->
