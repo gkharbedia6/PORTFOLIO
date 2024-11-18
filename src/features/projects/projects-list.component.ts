@@ -8,7 +8,7 @@ import { ProjectItemComponent } from './ui/project-item.component';
   selector: 'port-projects-list',
   standalone: true,
   imports: [HrefLinkComponent, ProjectItemComponent],
-  template: ` <ul>
+  template: ` <ul class="lg:min-w-[70vw]">
     @for (project of projectList; track project.name) {
     <port-project-item [project]="project" [isExpanded]="areAllExpanded" />
     }

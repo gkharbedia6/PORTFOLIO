@@ -18,66 +18,9 @@ import { TypewriterComponent } from './typewriter.component';
   template: `
     <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
       <div
-        class="lg:w-[30%] mb-14 lg:mb-0 flex flex-col items-center justify-start"
+        class="lg:w-full flex flex-col items-center justify-start gap-2 lg:px-20"
       >
-        @if (isClosed) {
-        <port-typewriter
-          class="w-full text-[13px] flex items-start py-12  justify-start"
-          [text]="poem"
-          [delayBetweenCycles]="5000"
-        ></port-typewriter>
-        } @else {
-        <div
-          class="flex  flex-col w-full justify-start items-center min-h-[400px] old_windows-window-border"
-        >
-          <div
-            class="w-full h-6 bg-rich_silver px-1 flex gap-1 justify-start items-center"
-          >
-            <p class="text-black text-[13px] text-start flex-grow">
-              profile pic 1
-            </p>
-            <div
-              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
-            >
-              <span class="text-black text-[10px] mt-[1px] ">
-                <img src="/assets/icons/foldIcon.jpg" />
-              </span>
-            </div>
-            <div
-              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
-            >
-              <span class="text-black text-[10px] mt-[1px] ">
-                <img src="/assets/icons/iconFullscreen.jpg" />
-              </span>
-            </div>
-            <div
-              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
-              (click)="toggleIsClosed()"
-            >
-              <span class="text-black text-[10px] mt-[1px] ">
-                <img src="/assets/icons/iconClose.jpg" />
-              </span>
-            </div>
-          </div>
-          <img src="assets/images/profile1.png" class="w-full object-cover" />
-        </div>
-
-        }
-
-        <iframe
-          width="100%"
-          height="350"
-          scrolling="no"
-          frameborder="no"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pxpstar&amp;color=0000FF"
-        >
-        </iframe>
-      </div>
-
-      <div
-        class="lg:w-[70%] flex flex-col items-center justify-start gap-2 lg:px-20"
-      >
-        <div
+        <!-- <div
           class="flex flex-col z-[-1] relative items-center justify-start mb-12 "
         >
           <div
@@ -90,9 +33,9 @@ import { TypewriterComponent } from './typewriter.component';
             </p>
             }
           </div>
-        </div>
+        </div> -->
         <div
-          class="mt-2 lg:mt-14 flex w-full flex-col justify-start gap-10 mb-3 items-start"
+          class="mt-2 lg:mt-14 flex w-full lg:w-[70vw] flex-col justify-start gap-10 mb-3 items-center"
         >
           <div class="flex justify-between w-full">
             <h3 class="text-lg font-bold underline">Projects</h3>
@@ -117,14 +60,9 @@ import { TypewriterComponent } from './typewriter.component';
 export class SectionOneComponent {
   developer = developerTexts;
   areAllExpanded: boolean = false;
-  isClosed: boolean = false;
   poem: string = poem;
 
   toggleAllDescriptions() {
     this.areAllExpanded = !this.areAllExpanded;
-  }
-
-  toggleIsClosed() {
-    this.isClosed = !this.isClosed;
   }
 }

@@ -4,7 +4,7 @@ import { RotatingImageComponent } from '../../features/rotating-image.component'
 import { chatGPTQuote } from '../../data-access/data';
 import { ItsYourTimeComponent } from '../../features/its-your-time.component';
 import { ProjectsListComponent } from '../../features/projects/projects-list.component';
-import { NgClass, NgOptimizedImage } from '@angular/common';
+import { NgClass, NgOptimizedImage, NgStyle } from '@angular/common';
 import { ButtonComponent } from '../ui/button.component';
 import { HrefLinkComponent } from '../ui/href-link.component';
 import { SectionOneComponent } from '../../features/section-one.component';
@@ -26,6 +26,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
     SectionOneComponent,
     SectionTwoComponent,
     TypewriterComponent,
+    NgStyle,
   ],
   styles: [
     `
@@ -85,24 +86,82 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         <img src="/assets/images/gkLogo.gif" />
       </div>
 
-      <div class="fixed z-[-20] top-0 left-0 w-screen h-screen">
+      <!-- <div class="fixed z-[-20] top-0 left-0 w-screen h-screen">
         <port-rotating-image></port-rotating-image>
-      </div>
+      </div> -->
 
-      <div class="flex flex-row justify-between mb-24 lg:mb-40">
+      <!-- <iframe
+          width="100%"
+          height="350"
+          scrolling="no"
+          frameborder="no"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pxpstar&amp;color=0000FF"
+        >
+        </iframe> -->
+
+      <div class="flex flex-row justify-between mb-24 lg:mb-10">
         <div class="flex flex-col gap-2 w-[70%]">
           <p class="text-xs ">
             {{ quote.quote }}
           </p>
-          <p class="text-end text-[10px] font-bold">{{ quote.author }}</p>
+          <!-- <p class="text-end text-[10px] font-bold">{{ quote.author }}</p> -->
         </div>
         <port-its-your-time></port-its-your-time>
       </div>
       <div
+        class="lg:w-[30%] relative mb-14 lg:mb-0 flex flex-col items-center justify-start"
+      >
+        @for (item of images; track $index) {
+
+        <!-- <port-typewriter
+          class="w-full text-[13px] flex items-start py-12  justify-start"
+          [text]="poem"
+          [delayBetweenCycles]="5000"
+        ></port-typewriter> -->
+        @if (picOpen?.includes(item.id)) {
+        <div
+          [ngStyle]="{ 'left.px': item.id * 30, 'top.px': -item.id * 10 }"
+          class="flex absolute flex-col w-full justify-start items-center min-h-[400px] old_windows-window-border"
+        >
+          <div
+            class="w-full h-6 bg-rich_silver px-1 flex gap-1 justify-start items-center"
+          >
+            <p class="text-black text-[13px] text-start flex-grow">
+              {{ item.description }}
+            </p>
+            <div
+              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
+            >
+              <span class="text-black text-[10px] mt-[1px] ">
+                <img src="/assets/icons/foldIcon.jpg" />
+              </span>
+            </div>
+            <div
+              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
+            >
+              <span class="text-black text-[10px] mt-[1px] ">
+                <img src="/assets/icons/iconFullscreen.jpg" />
+              </span>
+            </div>
+            <div
+              class="w-4 h-4 bg-rich_silver focus:bg-black old_windows-window-border flex justify-center items-center"
+              (click)="toggleIsClosed(item.id)"
+            >
+              <span class="text-black text-[10px] mt-[1px] ">
+                <img src="/assets/icons/iconClose.jpg" />
+              </span>
+            </div>
+          </div>
+          <img src="{{ item.imageUrl }}" class="w-full object-cover" />
+        </div>
+        } }
+      </div>
+
+      <div
         class="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between mb-12 lg:mb-12"
       >
-        <h1 class="text-3xl font-bold underline">Hello world!.xyz</h1>
-        <div class="flex flex-col gap-2 relative z-20">
+        <h1 class="text-xl font-bold underline">Hello world!.xyz</h1>
+        <!-- <div class="flex flex-col gap-2 relative z-20">
           <a port-href-link href="https://blankdiplomat.com">
             <div
               class="flex absolute lg:-top-10 top-2 right-0  lg:right-0 flex-row items-baseline justify-start lg:justify-end gap-0"
@@ -134,7 +193,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
               </p>
             </div>
           </a>
-        </div>
+        </div> -->
       </div>
       <port-section-one></port-section-one>
     </main>
@@ -143,7 +202,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
     >
       <port-typewriter
         class="text-[24px] text-cursor_blue"
-        text="to be continued..."
+        text="Thanks for visiting"
         [delayBetweenCycles]="1000"
       ></port-typewriter>
     </footer>
@@ -158,5 +217,29 @@ import { TypewriterComponent } from '../../features/typewriter.component';
   `,
 })
 export class AppComponent {
+  images = [
+    {
+      id: 1,
+      imageUrl: 'assets/images/profile1.png',
+      description: 'profile pic 1',
+    },
+    {
+      id: 2,
+      imageUrl: 'assets/images/cuteDoggy.png',
+      description: 'cute dog image',
+    },
+    {
+      id: 3,
+      imageUrl: 'assets/images/profile2.png',
+      description: 'profile pic 2',
+    },
+  ].reverse();
+
   quote = chatGPTQuote;
+  picOpen: number[] | null = [1, 2, 3];
+
+  toggleIsClosed(id: number) {
+    this.picOpen?.splice(this.picOpen.indexOf(id), 1);
+    console.log(this.picOpen);
+  }
 }

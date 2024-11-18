@@ -9,7 +9,7 @@ import { CommonModule, NgIf } from '@angular/common';
   standalone: true,
   template: `
     <div
-      class="flex flex-col gap-2 border-b border-black pb-2 overflow-hidden lg:w-[55vw] w-[95vw] mb-7"
+      class="flex flex-col gap-2 border-b border-black pb-2 overflow-hidden w-[95vw] lg:w-full mb-7"
     >
       <h3 class="text-md font-bold underline">{{ project.name }}</h3>
 
