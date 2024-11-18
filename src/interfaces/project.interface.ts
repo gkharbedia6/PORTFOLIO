@@ -4,4 +4,5 @@ export interface iProject {
   description: string;
   developerNotes?: string;
   technologies?: string[];
+  disabled?: boolean;
 }

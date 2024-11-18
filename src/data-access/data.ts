@@ -80,6 +80,7 @@ export const projects: iProject[] = [
     technologies: ['Shopify', 'Liquid', 'HTML', 'CSS', 'JavaScript'],
     developerNotes:
       'Not just a template website, its a custom design. Had to learn liquid template language and the structure of Shopify websites to change the look and functionality the way intended for the brand.',
+    disabled: true,
   },
   {
     name: 'Peculiar Weather',

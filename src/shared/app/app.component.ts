@@ -109,7 +109,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         <port-its-your-time></port-its-your-time>
       </div>
       <div
-        class="lg:w-[30%] relative mb-14 lg:mb-0 flex flex-col items-center justify-start"
+        class="lg:w-[20%] relative mb-14 lg:mb-0 flex flex-col items-center justify-start"
       >
         @for (item of images; track $index) {
 
@@ -121,7 +121,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         @if (picOpen?.includes(item.id)) {
         <div
           [ngStyle]="{ 'left.px': item.id * 30, 'top.px': -item.id * 10 }"
-          class="flex absolute flex-col w-full justify-start items-center min-h-[400px] old_windows-window-border"
+          class="flex absolute flex-col w-full justify-start items-center old_windows-window-border"
         >
           <div
             class="w-full h-6 bg-rich_silver px-1 flex gap-1 justify-start items-center"

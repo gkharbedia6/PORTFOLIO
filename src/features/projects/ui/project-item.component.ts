@@ -2,16 +2,25 @@ import { Component, Input, OnInit } from '@angular/core';
 import { iProject } from '../../../interfaces/project.interface';
 import { HrefLinkComponent } from '../../../shared/ui/href-link.component';
 import { ButtonComponent } from '../../../shared/ui/button.component';
-import { CommonModule, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'port-project-item',
   standalone: true,
   template: `
     <div
-      class="flex flex-col gap-2 border-b border-black pb-2 overflow-hidden w-[95vw] lg:w-full mb-7"
+      [ngClass]="{ 'opacity-50': project.disabled }"
+      class="flex flex-col gap-2 border-b relative border-black pb-2 overflow-hidden w-[95vw] lg:w-full mb-7"
     >
-      <h3 class="text-md font-bold underline">{{ project.name }}</h3>
+      @if (project.disabled) {
+      <p class="text-xs text-bold text-red-900 absolute top-0 right-0">
+        Currently unavailable
+      </p>
+
+      }
+      <h3 class="text-md font-bold ">
+        {{ project.name }}
+      </h3>
 
       <a
         port-href-link
@@ -66,7 +75,7 @@ import { CommonModule, NgIf } from '@angular/common';
 
       <div class="flex justify-center">
         <button
-          class="text-[10px] w-fit underline bg-none border-none p-0 text-inherit hover:no-underline"
+          class="text-[10px] w-fit underline bg-none border-none p-0 text-inherit"
           port-button
           (click)="toggleDescription()"
         >
@@ -91,7 +100,7 @@ import { CommonModule, NgIf } from '@angular/common';
       }
     `,
   ],
-  imports: [HrefLinkComponent, ButtonComponent],
+  imports: [HrefLinkComponent, ButtonComponent, NgClass],
 })
 export class ProjectItemComponent implements OnInit {
   @Input({ required: true }) project: iProject = {
