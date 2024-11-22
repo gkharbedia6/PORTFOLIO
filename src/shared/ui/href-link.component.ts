@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styles: [
     `
       :host {
-        cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
+        // cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
         text-decoration: underline;
       }
       :host:hover {

@@ -80,11 +80,11 @@ import { TypewriterComponent } from '../../features/typewriter.component';
           </a>
         </div>
       </div>
-      <div
+      <!-- <div
         class="absolute top-0  z-[-10] left-1/2 transform -translate-x-1/2 -translate-y-1/4 lg:w-[500px] w-[350px] "
       >
         <img src="/assets/images/gkLogo.gif" />
-      </div>
+      </div> -->
 
       <!-- <div class="fixed z-[-20] top-0 left-0 w-screen h-screen">
         <port-rotating-image></port-rotating-image>
@@ -99,22 +99,22 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         >
         </iframe> -->
 
-      <div class="flex flex-row justify-end">
+      <div class="flex flex-row justify-end pb-5">
         <port-its-your-time></port-its-your-time>
       </div>
-      <div
+      <!-- <div
         class=" relative lg:mb-0 flex flex-col lg:flex-row gap-4 items-center justify-between py-10 lg:max-w-[70vw] m-auto"
-      >
-        @for (item of images; track $index) {
+      > -->
+      <!-- @for (item of images; track $index) { -->
 
-        <!-- <port-typewriter
+      <!-- <port-typewriter
           class="w-full text-[13px] flex items-start py-12  justify-start"
           [text]="poem"
           [delayBetweenCycles]="5000"
         ></port-typewriter> -->
-        @if (picOpen?.includes(item.id)) {
-        <!-- [ngStyle]="{ 'left.px': item.id * 30, 'top.px': -item.id * 10 }" -->
-        <div
+      <!-- @if (picOpen?.includes(item.id)) { -->
+      <!-- [ngStyle]="{ 'left.px': item.id * 30, 'top.px': -item.id * 10 }" -->
+      <!-- <div
           class="flex lg:w-[25%] flex-col w-full justify-start items-center old_windows-window-border  "
         >
           <div
@@ -147,20 +147,20 @@ import { TypewriterComponent } from '../../features/typewriter.component';
             </div>
           </div>
           <img src="{{ item.imageUrl }}" class="w-full object-cover" />
-        </div>
-        } }
-        <div class="flex flex-col gap-2 w-[70%] ">
+        </div> -->
+      <!-- } } -->
+      <!-- <div class="flex flex-col gap-2 w-[70%] ">
           <p class="text-xs ">
             {{ quote.quote }}
-          </p>
-          <!-- <p class="text-end text-[10px] font-bold">{{ quote.author }}</p> -->
-        </div>
-      </div>
+          </p> -->
+      <!-- <p class="text-end text-[10px] font-bold">{{ quote.author }}</p> -->
+      <!-- </div>
+      </div> -->
 
       <div
         class="flex flex-col lg:flex-row gap-3 relative lg:gap-0 justify-between"
       >
-        <h1 class="text-xl font-bold underline">Hello world!.xyz</h1>
+        <h1 class="text-xl font-bold underline">Giorgi Kharbedia.xyz</h1>
         <div class="flex flex-col gap-2  z-20 absolute  top-0 right-0">
           <a
             target="_blank"
@@ -174,9 +174,9 @@ import { TypewriterComponent } from '../../features/typewriter.component';
               <div
                 class="w-[25px] flex items-center justify-center flex-row"
               ></div>
+              <!-- style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;" -->
               <p
                 class="text-[13px] bg-black underline hover:no-underline text-white px-2 py-1"
-                style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
               >
                 github
               </p>
@@ -195,9 +195,9 @@ import { TypewriterComponent } from '../../features/typewriter.component';
               <div
                 class="w-[25px] flex items-center justify-center flex-row"
               ></div>
+              <!-- style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;" -->
               <p
                 class="text-[13px] bg-[#0A66C2] underline hover:no-underline px-2 py-1 text-white"
-                style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
               >
                 linkedIn
               </p>
@@ -207,7 +207,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
       </div>
       <port-section-one></port-section-one>
     </main>
-    <footer
+    <!-- <footer
       class="h-screen  bg-section-two flex flex-col items-center justify-center md:hidden lg:flex"
     >
       <port-typewriter
@@ -215,13 +215,13 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         text="Thanks for visiting"
         [delayBetweenCycles]="1000"
       ></port-typewriter>
-    </footer>
+    </footer> -->
 
     <!-- MOBILE VIEW -->
     <main
       class="bg-cursor_blue h-screen w-screen text-white  font-monaco flex-col hidden md:flex lg:hidden items-center justify-center"
     >
-      <h2 class="text-[60px] font-bold underline">Hello world!.xyz</h2>
+      <h2 class="text-[60px] font-bold underline">Giorgi Kharbedia.xyz</h2>
       <p>This part has no view, please view on desktop or mobile!</p>
     </main>
   `,

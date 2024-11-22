@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   template: `<ng-content></ng-content>`, // Allows inner content to be projected
   styles: [
     `
-      :host {
-        cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
-      }
-      :host:hover {
-        cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
-      }
+      // :host {
+      //   cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
+      // }
+      // :host:hover {
+      //   cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;
+      // }
     `,
   ],
 })
