@@ -81,7 +81,7 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         </div>
       </div>
       <div
-        class="absolute top-1/4 z-[-10] left-1/2 transform -translate-x-1/2 -translate-y-1/4 lg:-translate-y-1/2 lg:w-[660px] w-[350px] "
+        class="absolute top-0  z-[-10] left-1/2 transform -translate-x-1/2 -translate-y-1/4 lg:w-[500px] w-[350px] "
       >
         <img src="/assets/images/gkLogo.gif" />
       </div>
@@ -99,17 +99,11 @@ import { TypewriterComponent } from '../../features/typewriter.component';
         >
         </iframe> -->
 
-      <div class="flex flex-row justify-between mb-24 lg:mb-10">
-        <div class="flex flex-col gap-2 w-[70%]">
-          <p class="text-xs ">
-            {{ quote.quote }}
-          </p>
-          <!-- <p class="text-end text-[10px] font-bold">{{ quote.author }}</p> -->
-        </div>
+      <div class="flex flex-row justify-end">
         <port-its-your-time></port-its-your-time>
       </div>
       <div
-        class="lg:w-[20%] relative mb-14 lg:mb-0 flex flex-col items-center justify-start"
+        class=" relative lg:mb-0 flex flex-col lg:flex-row gap-4 items-center justify-between py-10 lg:max-w-[70vw] m-auto"
       >
         @for (item of images; track $index) {
 
@@ -119,9 +113,9 @@ import { TypewriterComponent } from '../../features/typewriter.component';
           [delayBetweenCycles]="5000"
         ></port-typewriter> -->
         @if (picOpen?.includes(item.id)) {
+        <!-- [ngStyle]="{ 'left.px': item.id * 30, 'top.px': -item.id * 10 }" -->
         <div
-          [ngStyle]="{ 'left.px': item.id * 30, 'top.px': -item.id * 10 }"
-          class="flex absolute flex-col w-full justify-start items-center old_windows-window-border"
+          class="flex lg:w-[25%] flex-col w-full justify-start items-center old_windows-window-border  "
         >
           <div
             class="w-full h-6 bg-rich_silver px-1 flex gap-1 justify-start items-center"
@@ -155,30 +149,46 @@ import { TypewriterComponent } from '../../features/typewriter.component';
           <img src="{{ item.imageUrl }}" class="w-full object-cover" />
         </div>
         } }
+        <div class="flex flex-col gap-2 w-[70%] ">
+          <p class="text-xs ">
+            {{ quote.quote }}
+          </p>
+          <!-- <p class="text-end text-[10px] font-bold">{{ quote.author }}</p> -->
+        </div>
       </div>
 
       <div
-        class="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between mb-12 lg:mb-12"
+        class="flex flex-col lg:flex-row gap-3 relative lg:gap-0 justify-between"
       >
         <h1 class="text-xl font-bold underline">Hello world!.xyz</h1>
-        <!-- <div class="flex flex-col gap-2 relative z-20">
-          <a port-href-link href="https://blankdiplomat.com">
+        <div class="flex flex-col gap-2  z-20 absolute  top-0 right-0">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            port-href-link
+            href="https://github.com/gkharbedia6"
+          >
             <div
-              class="flex absolute lg:-top-10 top-2 right-0  lg:right-0 flex-row items-baseline justify-start lg:justify-end gap-0"
+              class="flex   lg:right-0 flex-row items-baseline justify-start lg:justify-end gap-0"
             >
               <div
                 class="w-[25px] flex items-center justify-center flex-row"
               ></div>
               <p
-                class="text-[13px] bg-black rounded-full text-white px-2 py-1"
+                class="text-[13px] bg-black underline hover:no-underline text-white px-2 py-1"
                 style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
               >
-                blankdiplomat.com
+                github
               </p>
             </div>
           </a>
 
-          <a port-href-link href="https://linktr.ee/pxpstar">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            port-href-link
+            href="https://www.linkedin.com/in/giorgi-kharbedia-8642a6332/"
+          >
             <div
               class="flex flex-row items-baseline justify-start lg:justify-end gap-0"
             >
@@ -186,14 +196,14 @@ import { TypewriterComponent } from '../../features/typewriter.component';
                 class="w-[25px] flex items-center justify-center flex-row"
               ></div>
               <p
-                class="text-[13px] bg-rich_silver px-2 py-1"
+                class="text-[13px] bg-[#0A66C2] underline hover:no-underline px-2 py-1 text-white"
                 style=" cursor: url('/assets/cursors/blueCursorPointer.png') 12 12, pointer;"
               >
-                links
+                linkedIn
               </p>
             </div>
           </a>
-        </div> -->
+        </div>
       </div>
       <port-section-one></port-section-one>
     </main>
@@ -220,19 +230,19 @@ export class AppComponent {
   images = [
     {
       id: 1,
-      imageUrl: 'assets/images/profile1.png',
+      imageUrl: 'assets/images/profile.png',
       description: 'profile pic 1',
     },
-    {
-      id: 2,
-      imageUrl: 'assets/images/cuteDoggy.png',
-      description: 'cute dog image',
-    },
-    {
-      id: 3,
-      imageUrl: 'assets/images/profile2.png',
-      description: 'profile pic 2',
-    },
+    // {
+    //   id: 2,
+    //   imageUrl: 'assets/images/cuteDoggy.png',
+    //   description: 'cute dog image',
+    // },
+    // {
+    //   id: 3,
+    //   imageUrl: 'assets/images/profile2.png',
+    //   description: 'profile pic 2',
+    // },
   ].reverse();
 
   quote = chatGPTQuote;

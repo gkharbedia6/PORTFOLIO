@@ -16,7 +16,7 @@ import { TypewriterComponent } from './typewriter.component';
     TypewriterComponent,
   ],
   template: `
-    <div class="flex flex-col lg:flex-row w-full justify-start mt-5">
+    <div class="flex flex-col lg:flex-row w-full justify-start mt-10">
       <div
         class="lg:w-full flex flex-col items-center justify-start gap-2 lg:px-20"
       >
@@ -35,7 +35,7 @@ import { TypewriterComponent } from './typewriter.component';
           </div>
         </div> -->
         <div
-          class="mt-2 lg:mt-14 flex w-full lg:w-[70vw] flex-col justify-start gap-10 mb-3 items-center"
+          class="mt-12 flex w-full lg:w-[70vw] flex-col justify-start gap-10 mb-3 items-center"
         >
           <div class="flex justify-between w-full">
             <h3 class="text-lg font-bold underline">Projects</h3>

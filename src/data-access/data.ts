@@ -30,7 +30,7 @@ export const developerTexts: string[] = [
 
 export const chatGPTQuote: IChatGPTQuote = {
   quote:
-    '  "Giorgi Kharbedia, born in 90s, is a skilled thinker with a passion for creating intuitive and visually appealing web interfaces. With interest in modern technologies, Giorgi combines a technical background with a creative approach to design and create cool stuff. His attention to detail and ability to stay current make him a valuable asset in the ever-evolving nature of this world." ',
+    '  "Giorgi Kharbedia is a skilled thinker with a passion for creating intuitive and visually appealing web interfaces. With interest in modern technologies, Giorgi combines a technical background with a creative approach to design and create cool stuff. His attention to detail and ability to stay current make him a valuable asset in the ever-evolving nature of this world." ',
   author: '-   ChatGPT, circa 2024',
 };
 
