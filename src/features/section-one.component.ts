@@ -43,7 +43,7 @@ import { TypewriterComponent } from './typewriter.component';
             <button
               port-button
               class="bg-black py-1 px-2 rounded-full text-white text-[8px] lg:text-[10px]"
-              [ngClass]="{ 'bg-akira_red': areAllExpanded }"
+              [ngClass]="{ 'bg-[#E12120]': areAllExpanded }"
               (click)="toggleAllDescriptions()"
             >
               {{ areAllExpanded ? 'collapse all' : 'expand all' }}
