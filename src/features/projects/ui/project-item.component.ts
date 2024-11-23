@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
       class="flex flex-col gap-2 border-b relative border-black pb-2 overflow-hidden w-[95vw] lg:w-full mb-7"
     >
       @if (project.disabled) {
-      <p class="text-xs text-bold text-red-900 absolute top-0 right-0">
+      <p class="text-xs text-bold text-akira_red absolute top-0 right-0">
         Currently unavailable
       </p>
 
