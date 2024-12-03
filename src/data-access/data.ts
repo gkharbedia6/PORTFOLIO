@@ -36,6 +36,26 @@ export const chatGPTQuote: IChatGPTQuote = {
 
 export const projects: iProject[] = [
   {
+    name: 'ChatApp',
+    url: 'https://chat-app-bice-nu.vercel.app/',
+    description:
+      'Become friends and chat up with random character about random stuff.',
+    technologies: [
+      'React',
+      'Next.js',
+      'Next Auth',
+      'TypeScript',
+      'HTML',
+      'CSS',
+      'Tailwind',
+      'Redis',
+      'Vercel',
+      'Pusher.js',
+    ],
+    developerNotes:
+      'Please note: Pusher.js used in this application is on free tier, meaning there is a limit to connection count. Chatting application with Next.js and React.js. Uses Redis for database and Pusher.js webhooks for real-time messages and notifications. Global chat, where you can chat with all users and add them to your friends list to later chat with them in private.',
+  },
+  {
     name: 'Win95 (In Progress)',
     url: 'https://win95-five.vercel.app/',
     description:
@@ -44,7 +64,7 @@ export const projects: iProject[] = [
     developerNotes: 'This project is a work in progress.',
   },
   {
-    name: 'VVHARTS',
+    name: 'VVHARTS - Clothing brand e-commerce',
     url: 'https://vvharts.com/',
     description:
       'VVHARTS is a modern streetwear clothing brand website with full e-commerce functionality. It features responsive design showcasing the latest collections, an intuitive shopping cart, secure checkout process, and user account management.',
@@ -65,7 +85,7 @@ export const projects: iProject[] = [
       'First time using Supabase. Fully functional e-commerce responsive website with admin panel. Use mail: testadmin@gmail.com and password: testadmin123! to access the website full functionality with admin rights, or create your own regular customer account with register or google auth.',
   },
   {
-    name: 'TATIA BAZADZE',
+    name: 'TATIA BAZADZE - Artist Portfolio',
     url: 'https://tatiabazadze.com/images',
     description:
       "A minimalist portfolio website showcasing the vibrant works of painter Tatia Bazadze. The gallery-style layout emphasizes the artwork, allowing visitors to immerse themselves in the artist's colorful and expressive paintings. The site features a clean, intuitive design that lets the art speak for itself.",
