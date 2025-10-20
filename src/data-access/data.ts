@@ -86,7 +86,8 @@ export const projects: iProject[] = [
   },
   {
     name: 'TATIA BAZADZE - Artist Portfolio',
-    url: 'https://tatiabazadze.com/images',
+    // url: 'https://tatiabazadze.com/images',
+     url: ' https://untitled-artist-portfolio.vercel.app/images',
     description:
       "A minimalist portfolio website showcasing the vibrant works of painter Tatia Bazadze. The gallery-style layout emphasizes the artwork, allowing visitors to immerse themselves in the artist's colorful and expressive paintings. The site features a clean, intuitive design that lets the art speak for itself.",
     technologies: ['Angular', 'HTML', 'CSS', 'TypeScript'],
