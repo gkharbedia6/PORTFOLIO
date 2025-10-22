@@ -82,7 +82,7 @@ export const projects: iProject[] = [
       'Nodemailer',
     ],
     developerNotes:
-      'First time using Supabase. Fully functional e-commerce responsive website with admin panel. Use mail: testadmin@gmail.com and password: testadmin123! to access the website full functionality with admin rights, or create your own regular customer account with register or google auth.',
+      'First time using Supabase. Fully functional e-commerce responsive website with admin panel. Use mail: testadmin@gmail.com and password: testadmin123! (which are prewritten in the form) to access the website full functionality with admin rights, or create your own regular customer account with register or google auth.',
   },
   {
     name: 'TATIA BAZADZE - Artist Portfolio',
