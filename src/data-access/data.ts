@@ -55,14 +55,14 @@ export const projects: iProject[] = [
     developerNotes:
       'Please note: Pusher.js used in this application is on free tier, meaning there is a limit to connection count. Chatting application with Next.js and React.js. Uses Redis for database and Pusher.js webhooks for real-time messages and notifications. Global chat, where you can chat with all users and add them to your friends list to later chat with them in private.',
   },
-  {
-    name: 'Win95 (In Progress)',
-    url: 'https://win95-five.vercel.app/',
-    description:
-      'Win95 is a web application that allows you to experience the classic Windows 95 interface.',
-    technologies: ['React', 'Vite', 'TypeScript', 'HTML', 'CSS', 'Tailwind'],
-    developerNotes: 'This project is a work in progress.',
-  },
+  // {
+  //   name: 'Win95 (In Progress)',
+  //   url: 'https://win95-five.vercel.app/',
+  //   description:
+  //     'Win95 is a web application that allows you to experience the classic Windows 95 interface.',
+  //   technologies: ['React', 'Vite', 'TypeScript', 'HTML', 'CSS', 'Tailwind'],
+  //   developerNotes: 'This project is a work in progress.',
+  // },
   {
     name: 'VVHARTS - Clothing brand e-commerce',
     url: 'https://vvharts.com/',
@@ -87,22 +87,22 @@ export const projects: iProject[] = [
   {
     name: 'TATIA BAZADZE - Artist Portfolio',
     // url: 'https://tatiabazadze.com/images',
-     url: ' https://untitled-artist-portfolio.vercel.app/images',
+     url: 'https://untitled-artist-portfolio.vercel.app/images',
     description:
       "A minimalist portfolio website showcasing the vibrant works of painter Tatia Bazadze. The gallery-style layout emphasizes the artwork, allowing visitors to immerse themselves in the artist's colorful and expressive paintings. The site features a clean, intuitive design that lets the art speak for itself.",
     technologies: ['Angular', 'HTML', 'CSS', 'TypeScript'],
     developerNotes: 'A static portfolio website.',
   },
-  {
-    name: 'BLANK DIPLOMAT',
-    url: 'https://blankdiplomat.com/',
-    description:
-      "BLANK DIPLOMAT is a personal clothing brand website built on the Shopify platform. It showcases a unique collection of streetwear and accessories with a minimalist aesthetic. The site features custom-designed themes using Liquid templating language, along with bespoke HTML and CSS to create a distinctive user experience. The e-commerce functionality is seamlessly integrated, offering smooth navigation, product filtering, and a secure checkout process. The design emphasizes clean lines and a monochromatic color scheme, reflecting the brand's ethos of simplicity and quality.",
-    technologies: ['Shopify', 'Liquid', 'HTML', 'CSS', 'JavaScript'],
-    developerNotes:
-      'Not just a template website, its a custom design. Had to learn liquid template language and the structure of Shopify websites to change the look and functionality the way intended for the brand.',
-    disabled: true,
-  },
+  // {
+  //   name: 'BLANK DIPLOMAT',
+  //   url: 'https://blankdiplomat.com/',
+  //   description:
+  //     "BLANK DIPLOMAT is a personal clothing brand website built on the Shopify platform. It showcases a unique collection of streetwear and accessories with a minimalist aesthetic. The site features custom-designed themes using Liquid templating language, along with bespoke HTML and CSS to create a distinctive user experience. The e-commerce functionality is seamlessly integrated, offering smooth navigation, product filtering, and a secure checkout process. The design emphasizes clean lines and a monochromatic color scheme, reflecting the brand's ethos of simplicity and quality.",
+  //   technologies: ['Shopify', 'Liquid', 'HTML', 'CSS', 'JavaScript'],
+  //   developerNotes:
+  //     'Not just a template website, its a custom design. Had to learn liquid template language and the structure of Shopify websites to change the look and functionality the way intended for the brand.',
+  //   disabled: true,
+  // },
   {
     name: 'Peculiar Weather',
     url: 'https://weather-virid-pi.vercel.app/',
