@@ -53,7 +53,7 @@ export const projects: iProject[] = [
       'Pusher.js',
     ],
     developerNotes:
-      'Please note: Pusher.js used in this application is on free tier, meaning there is a limit to connection count. Chatting application with Next.js and React.js. Uses Redis for database and Pusher.js webhooks for real-time messages and notifications. Global chat, where you can chat with all users and add them to your friends list to later chat with them in private.',
+      'Use mail: testadmin@gmail.com and password: testadmin123! (which are prewritten in the form) to access the website full functionality, or create your own regular customer account with register or google auth. Please note: Pusher.js used in this application is on free tier, meaning there is a limit to connection count. Chatting application with Next.js and React.js. Uses Redis for database and Pusher.js webhooks for real-time messages and notifications. Global chat, where you can chat with all users and add them to your friends list to later chat with them in private.',
   },
   // {
   //   name: 'Win95 (In Progress)',
@@ -87,7 +87,7 @@ export const projects: iProject[] = [
   {
     name: 'TATIA BAZADZE - Artist Portfolio',
     // url: 'https://tatiabazadze.com/images',
-     url: 'https://untitled-artist-portfolio.vercel.app/images',
+    url: 'https://untitled-artist-portfolio.vercel.app/images',
     description:
       "A minimalist portfolio website showcasing the vibrant works of painter Tatia Bazadze. The gallery-style layout emphasizes the artwork, allowing visitors to immerse themselves in the artist's colorful and expressive paintings. The site features a clean, intuitive design that lets the art speak for itself.",
     technologies: ['Angular', 'HTML', 'CSS', 'TypeScript'],
