@@ -65,7 +65,7 @@ export const projects: iProject[] = [
   // },
   {
     name: 'VVHARTS - Clothing brand e-commerce',
-    url: 'https://vvharts.com/',
+    url: 'https://vvharts-clothing-brand.vercel.app',
     description:
       'VVHARTS is a modern streetwear clothing brand website with full e-commerce functionality. It features responsive design showcasing the latest collections, an intuitive shopping cart, secure checkout process, and user account management.',
     technologies: [
